@@ -30,26 +30,33 @@ while True:
             print(row)
 
     elif 'edit' in user_action:
-        with open('todos.txt', 'r') as file:
-            todos = file.readlines()
+        try:
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
 
-        index = int(user_action[5])
-        index -= 1
-        new_todo = user_action[7:]
-        todos[index] = new_todo + "\n"
+            index = int(user_action[5])
+            index -= 1
+            new_todo = user_action[7:]
+            todos[index] = new_todo + "\n"
 
-        with open('todos.txt', 'w') as file:
-            file.writelines(todos)
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
+        except ValueError:
+            print("Command is not valid")
+            continue
 
     elif 'complete' in user_action:
-        with open('todos.txt', 'r') as file:
-            todos = file.readlines()
+        try: # try-except blocks only catch exceptions, not syntax errors
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
 
-        number = int(user_action[9:])
-        todos.pop(number - 1)
+            number = int(user_action[9:])
+            todos.pop(number - 1)
 
-        with open('todos.txt', 'w') as file:
-            file.writelines(todos)
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
+        except IndexError:
+            print("There is no number like that.")
 
     else:
         break
