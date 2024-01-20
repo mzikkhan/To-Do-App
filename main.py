@@ -1,16 +1,11 @@
 ## Python uses an interpreter called CPython
 ## You can use .sort() to sort a list
+## Use docstrings for every function
 
-def get_todos(filepath='todos.txt'):
-    """ Read a text file and return the list of to-do items. """
-    with open(filepath, 'r') as file:
-        todos = file.readlines()
-    return todos
-
-def write_todos(todos, filepath='todos.txt'):
-    """ Write a list of to-do items to a text file. """
-    with open(filepath, 'w') as file:
-        file.writelines(todos)
+from functions import get_todos, write_todos
+# import functions as fn, fn.get_todos()
+# you can keep functions in a separate module as:
+## from modules import functions as fn, fn.get_todos()
 
 user_prompt = "Type add, show, edit, complete, or exit: "
 
