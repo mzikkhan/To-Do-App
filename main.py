@@ -3,9 +3,13 @@
 ## Use docstrings for every function
 
 from functions import get_todos, write_todos
+import time
 # import functions as fn, fn.get_todos()
 # you can keep functions in a separate module as:
 ## from modules import functions as fn, fn.get_todos()
+
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("It is ", now)
 
 user_prompt = "Type add, show, edit, complete, or exit: "
 
