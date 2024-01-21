@@ -1,9 +1,14 @@
 import functions
+import os
 
 ## You can create and download libraries from pypi
 
 import PySimpleGUI as sg
 import time
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 sg.theme("DarkRed")
 
