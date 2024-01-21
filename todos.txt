@@ -1,6 +1,4 @@
 Complete python course
 Finish CTCI: Chapter 2
-Go to sleep
-Wake up early
-Text absarta
+Read book
 
